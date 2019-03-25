@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 //pipes
 import { MyUpperPipe } from './product/nameUpper.pipe';
@@ -15,13 +16,14 @@ import { ProductComponent } from './product/product.component';
 import { StarComponent } from './shared/star.component';
 
 //services
-
+import { ProductService } from './product/product.service';
 @NgModule({
   //all module declares here
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
     
   ],
   //all the component and pipes declares here
@@ -31,10 +33,13 @@ import { StarComponent } from './shared/star.component';
     MyUpperPipe,
     DiscountPipe,
     ProductSearch,
-    StarComponent
+    StarComponent,
   ],
+
   //all the services here 
-  providers: [],
+  providers: [
+    ProductService,
+  ],
 
   //only first component
   bootstrap: [AppComponent]
