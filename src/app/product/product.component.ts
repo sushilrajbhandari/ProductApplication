@@ -7,10 +7,13 @@ import { IProduct } from './product.model';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+  mainHeading: string = 'Product List';
+  starHeading: string;
   title: string = 'Filter By:';
   nuberText: string = 'Number of product filter:';
   userInput: string;
-  showImage: Boolean = false;
+  imageWidth: number = 50;
+  showImage: Boolean = true;
 
   products:IProduct []=[
     {
@@ -43,7 +46,7 @@ export class ProductComponent {
       "releaseDate": "May 21, 2016",
       "description": "Curved claw steel hammer",
       "price": 8.9,
-      "starRating": 4.8,
+      "starRating": 3.8,
       "imageUrl": "https://i.ibb.co/TrR7jkM/hammer.png"
     },
     {
@@ -54,7 +57,7 @@ export class ProductComponent {
       "releaseDate": "May 15, 2016",
       "description": "15-inch steel blade hand saw",
       "price": 11.55,
-      "starRating": 3.7,
+      "starRating": 2.7,
       "imageUrl": "https://i.ibb.co/vmS3kRH/saw.png"
     },
     {
@@ -71,6 +74,10 @@ export class ProductComponent {
   ]
   toggleImage():void{
     this.showImage= !this.showImage
+  }
+
+  onDataReceived(message: string){
+    this.starHeading = message;
   }
 
 }
