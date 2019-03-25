@@ -31,7 +31,8 @@ export class StarComponent implements OnChanges, OnInit, OnDestroy {
     }
 
     onStar(): void{
-        this.ratingClicked.emit (`The Rating clicked is ${this.rating}`);
+        this.ratingClicked.emit (`This star rating is ${this.rating}`);
+        localStorage.setItem('ratevalue', 'My Rate Value 1');
     }
 
 }

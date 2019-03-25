@@ -7,6 +7,7 @@ import { IProduct } from './product.model';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+  localstoragevalue = localStorage.getItem('ratevalue');
   mainHeading: string = 'Product List';
   starHeading: string;
   title: string = 'Filter By:';
